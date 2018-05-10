@@ -1,4 +1,4 @@
-package com.thoughtsnative;
+package com.thoughtsappnative;
 
 import android.app.Application;
 

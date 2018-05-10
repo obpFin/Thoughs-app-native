@@ -1,4 +1,7 @@
 {
-  "name": "ThoughtsNative",
-  "displayName": "ThoughtsNative"
+  "expo": {
+    "sdkVersion": "27.0.0"
+  },
+  "name": "thoughtsappnative",
+  "displayName": "Thoughts"
 }
