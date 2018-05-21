@@ -10,7 +10,7 @@ const MainHeadingText = props => (
 const styles = StyleSheet.create({
   textHeading: {
     fontFamily: 'KaushanScript-Regular',
-    fontSize: 52,
+    fontSize: 62,
     fontWeight: 'bold',
     color: 'white'
   }

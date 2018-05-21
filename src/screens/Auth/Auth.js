@@ -3,18 +3,29 @@ import {
   View,
   Text,
   ImageBackground,
-  StyleSheet
+  StyleSheet,
+  TouchableOpacity
 } from 'react-native';
 
 import backgroundImage from '../../assets/images/background.jpg';
 import MainHeadingtext from '../../components/UI/MainHeadingText/MainHeadingText';
 
 class AuthScreen extends Component {
+  handleLoginButton = () => {
+    this.props.navigator.push({
+      screen: 'thoughts.HomeScreen',
+      title: 'Thoughts',
+      animated: true,
+      animationType: 'fade'
+    });
+  }
   render() {
     return (
       <ImageBackground source={backgroundImage} style={styles.backgroundImage}>
         <View style={styles.container}>
-          <MainHeadingtext>Thoughts</MainHeadingtext>
+          <TouchableOpacity onPress={this.handleLoginButton}>
+            <MainHeadingtext>Thoughts</MainHeadingtext>
+          </TouchableOpacity>
         </View>
       </ImageBackground>
     );
