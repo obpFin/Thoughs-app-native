@@ -4,15 +4,30 @@ import {
   Text,
   ImageBackground,
   StyleSheet,
-  TouchableOpacity
+  TouchableOpacity,
+  Animated
 } from 'react-native';
 
 import backgroundImage from '../../assets/images/background.jpg';
 import MainHeadingtext from '../../components/UI/MainHeadingText/MainHeadingText';
 
 class AuthScreen extends Component {
-  handleLoginButton = () => {
-    this.props.navigator.push({
+  constructor(props) {
+    super(props);
+  }
+  state = {
+    removeAnim: new Animated.Value(1)
+  }
+  loginHandler = () => {
+    Animated.timing(this.state.removeAnim, {
+      toValue: 0,
+      duration: 800,
+      useNativeDriver: true
+    }).start(this.onLoginEnd);
+  }
+  onLoginEnd = () => {
+    this.props.navigator.pop();
+    this.props.navigator.resetTo({
       screen: 'thoughts.HomeScreen',
       title: 'Thoughts',
       animated: true,
@@ -22,11 +37,27 @@ class AuthScreen extends Component {
   render() {
     return (
       <ImageBackground source={backgroundImage} style={styles.backgroundImage}>
-        <View style={styles.container}>
-          <TouchableOpacity onPress={this.handleLoginButton}>
+        <Animated.View 
+          style={
+            [styles.container,
+            {
+              opacity: this.state.removeAnim,
+              transform: [
+                {
+                  scale: this.state.removeAnim.interpolate({
+                    inputRange: [0, 1],
+                    outputRange: [12, 1]
+                  })
+                }
+              ]
+            }
+            ]
+          }
+        >
+          <TouchableOpacity onPress={this.loginHandler}>
             <MainHeadingtext>Thoughts</MainHeadingtext>
           </TouchableOpacity>
-        </View>
+        </Animated.View>
       </ImageBackground>
     );
   }
