@@ -12,7 +12,7 @@ class Thought extends Component {
   render() {
     return (
       <View>
-      <MainText>Thought</MainText>
+      <MainText>{props.thought}</MainText>
     </View>
     );
   }

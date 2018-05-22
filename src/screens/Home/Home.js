@@ -9,8 +9,10 @@ import {
 import backgroundImage from '../../assets/images/background.jpg';
 
 class HomeScreen extends Component {
-
   render() {
+    this.props.navigator.setStyle({
+      navBarTextFontFamily: 'KaushanScript-Regular',
+    });
     return (
       <ImageBackground source={backgroundImage} style={styles.backgroundImage}>
         <View style={styles.container}>
@@ -31,6 +33,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center'
   }
-})
+});
 
 export default HomeScreen;
