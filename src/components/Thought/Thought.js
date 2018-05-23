@@ -6,16 +6,24 @@ import {
 import MainText from '../UI/MainText/MainText';
 
 class Thought extends Component {
-  constructor() {
+  constructor(props) {
     super(props);
   }
   render() {
     return (
-      <View>
-      <MainText>{props.thought}</MainText>
-    </View>
+      <View style={styles.container}>
+        <MainText>{this.props.text}</MainText>
+      </View>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    width: '70%',
+    height: 100,
+    padding: 10
+  }
+});
 
 export default Thought;

@@ -5,10 +5,15 @@ import {
   ImageBackground,
   StyleSheet,
 } from 'react-native';
+import { connect } from 'react-redux';
 
 import backgroundImage from '../../assets/images/background.jpg';
+import ThoughtsList from '../../components/ThoughtsList/ThoughtsList';
 
 class HomeScreen extends Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
     this.props.navigator.setStyle({
       navBarTextFontFamily: 'KaushanScript-Regular',
@@ -16,7 +21,9 @@ class HomeScreen extends Component {
     return (
       <ImageBackground source={backgroundImage} style={styles.backgroundImage}>
         <View style={styles.container}>
-          <Text style={styles.text}>Home</Text>
+          <ThoughtsList
+            thoughts={this.props.thoughts}
+          />
         </View>
       </ImageBackground>
     );
@@ -35,4 +42,10 @@ const styles = StyleSheet.create({
   }
 });
 
-export default HomeScreen;
+const mapStateToProps = state => {
+  return {
+    thoughts: state.thoughts.thoughts
+  }
+}
+
+export default connect(mapStateToProps)(HomeScreen);
