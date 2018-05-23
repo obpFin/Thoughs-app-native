@@ -37,7 +37,7 @@ class AuthScreen extends Component {
   render() {
     return (
       <ImageBackground source={backgroundImage} style={styles.backgroundImage}>
-        <Animated.View 
+        <Animated.View
           style={
             [styles.container,
             {
