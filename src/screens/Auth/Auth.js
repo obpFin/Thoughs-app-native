@@ -10,6 +10,7 @@ import {
 
 import backgroundImage from '../../assets/images/background.jpg';
 import MainHeadingtext from '../../components/UI/MainHeadingText/MainHeadingText';
+import startTabs from '../mainTabs/startMainTabs';
 
 class AuthScreen extends Component {
   constructor(props) {
@@ -27,12 +28,15 @@ class AuthScreen extends Component {
   }
   onLoginEnd = () => {
     this.props.navigator.pop();
+    /*
     this.props.navigator.resetTo({
       screen: 'thoughts.HomeScreen',
       title: 'Thoughts',
       animated: true,
       animationType: 'fade'
     });
+    */
+   startTabs();
   }
   render() {
     return (
