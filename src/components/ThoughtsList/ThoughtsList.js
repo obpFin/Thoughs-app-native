@@ -11,13 +11,16 @@ import Thought from '../Thought/Thought';
 const ThoughtsList = (props) => (
   <View style={styles.container}>
     <FlatList
+      style={styles.list}
       data={props.thoughts}
       renderItem={( info ) => (
         <Thought
-          style={styles.item}
+          key={info.item.id}
           text={info.item.text}
+          creatorName={info.item.creatorName}
         />
       )}
+      keyExtractor={(item,index) => item.id}
     />
   </View>
 );
@@ -26,7 +29,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: '100%',
-    paddingTop: 22
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  list: {
+    width: '100%',
   }
 });
 

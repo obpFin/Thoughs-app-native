@@ -10,8 +10,10 @@ class Thought extends Component {
     super(props);
   }
   render() {
+    console.log(this.props)
     return (
       <View style={styles.container}>
+        <MainText style={styles.creatorName}>{this.props.creatorName}</MainText>
         <MainText>{this.props.text}</MainText>
       </View>
     );
@@ -20,9 +22,19 @@ class Thought extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    width: '70%',
-    height: 100,
-    padding: 10
+    backgroundColor: 'white',
+    width: '100%',
+    minHeight: 100,
+    padding: 10,
+    marginTop: 20,
+    marginBottom: 10,
+    borderWidth: 1,
+    borderColor: 'white'
+  },
+  creatorName: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    paddingBottom: 10
   }
 });
 
