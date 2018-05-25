@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 import { connect } from 'react-redux';
 
-import backgroundImage from '../../assets/images/background.jpg';
+import MainBackground from '../../components/UI/mainBackground/mainBackground';
 import ThoughtsList from '../../components/ThoughtsList/ThoughtsList';
 
 class HomeScreen extends Component {
@@ -19,22 +19,18 @@ class HomeScreen extends Component {
       navBarTextFontFamily: 'KaushanScript-Regular',
     });
     return (
-      <ImageBackground source={backgroundImage} style={styles.backgroundImage}>
+      <MainBackground>
         <View style={styles.container}>
           <ThoughtsList
             thoughts={this.props.thoughts}
           />
         </View>
-      </ImageBackground>
+      </MainBackground>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  backgroundImage: {
-    flex: 1,
-    width: '100%'
-  },
   container: {
     flex: 1,
     justifyContent: 'center',

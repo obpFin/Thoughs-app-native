@@ -3,7 +3,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 const startTabs = () => {
   Promise.all([
-    Icon.getImageSource('ios-map', 30)
+    Icon.getImageSource('ios-home', 30)
   ]).then(sources => {
     Navigation.startTabBasedApp({
       tabs: [

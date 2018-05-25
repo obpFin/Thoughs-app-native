@@ -8,8 +8,8 @@ import {
   Animated
 } from 'react-native';
 
-import backgroundImage from '../../assets/images/background.jpg';
 import MainHeadingtext from '../../components/UI/MainHeadingText/MainHeadingText';
+import MainBackground from '../../components/UI/mainBackground/mainBackground';
 import startTabs from '../mainTabs/startMainTabs';
 
 import SplashScreen from 'react-native-splash-screen';
@@ -45,7 +45,7 @@ class AuthScreen extends Component {
   }
   render() {
     return (
-      <ImageBackground source={backgroundImage} style={styles.backgroundImage}>
+      <MainBackground>
         <Animated.View
           style={
             [styles.container,
@@ -67,16 +67,12 @@ class AuthScreen extends Component {
             <MainHeadingtext>Thoughts</MainHeadingtext>
           </TouchableOpacity>
         </Animated.View>
-      </ImageBackground>
+      </MainBackground>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  backgroundImage: {
-    flex: 1,
-    width: '100%'
-  },
   container: {
     flex: 1,
     justifyContent: 'center',
