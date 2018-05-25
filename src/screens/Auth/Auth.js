@@ -12,12 +12,17 @@ import backgroundImage from '../../assets/images/background.jpg';
 import MainHeadingtext from '../../components/UI/MainHeadingText/MainHeadingText';
 import startTabs from '../mainTabs/startMainTabs';
 
+import SplashScreen from 'react-native-splash-screen';
+
 class AuthScreen extends Component {
   constructor(props) {
     super(props);
   }
   state = {
     removeAnim: new Animated.Value(1)
+  }
+  componentDidMount() {
+    SplashScreen.hide();
   }
   loginHandler = () => {
     Animated.timing(this.state.removeAnim, {
