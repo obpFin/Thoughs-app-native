@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, StyleSheet } from 'react-native';
 
-const MainHeadingText = props => (
+const AppHeadingText = props => (
   <Text {...props} style={[styles.textHeading, props.style]}>
     {props.children}
   </Text>
@@ -9,11 +9,11 @@ const MainHeadingText = props => (
 
 const styles = StyleSheet.create({
   textHeading: {
-    //fontFamily: 'KaushanScript-Regular',
-    fontSize: 24,
+    fontFamily: 'KaushanScript-Regular',
+    fontSize: 62,
     fontWeight: 'bold',
     color: 'white'
   }
 });
 
-export default MainHeadingText;
+export default AppHeadingText;
