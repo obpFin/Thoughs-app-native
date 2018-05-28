@@ -6,7 +6,8 @@ const MainText = props => (
 );
 const styles = StyleSheet.create({
   mainText: {
-    color: "black"
+    color: "black",
+    fontFamily: 'Gill Sans'
   }
 });
 

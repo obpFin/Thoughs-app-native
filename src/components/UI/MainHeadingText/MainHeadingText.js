@@ -11,8 +11,8 @@ const styles = StyleSheet.create({
   textHeading: {
     //fontFamily: 'KaushanScript-Regular',
     fontSize: 24,
-    fontWeight: 'bold',
-    color: 'white'
+    color: 'white',
+    fontFamily: 'Gill Sans'
   }
 });
 
