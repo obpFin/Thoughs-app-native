@@ -8,7 +8,7 @@ import {
   Animated
 } from 'react-native';
 
-import MainHeadingtext from '../../components/UI/MainHeadingText/MainHeadingText';
+import AppHeadingText from '../../components/UI/AppHeadingText/AppHeadingText';
 import MainBackground from '../../components/UI/mainBackground/mainBackground';
 import startTabs from '../mainTabs/startMainTabs';
 
@@ -32,39 +32,33 @@ class AuthScreen extends Component {
     }).start(this.onLoginEnd);
   }
   onLoginEnd = () => {
-    this.props.navigator.pop();
-    /*
-    this.props.navigator.resetTo({
-      screen: 'thoughts.HomeScreen',
-      title: 'Thoughts',
-      animated: true,
-      animationType: 'fade'
-    });
-    */
-   startTabs();
+    startTabs();
   }
   render() {
+    this.props.navigator.setStyle({
+      navBarTextFontFamily: 'KaushanScript-Regular',
+    });
     return (
       <MainBackground>
         <Animated.View
           style={
             [styles.container,
-            {
-              opacity: this.state.removeAnim,
-              transform: [
-                {
-                  scale: this.state.removeAnim.interpolate({
-                    inputRange: [0, 1],
-                    outputRange: [12, 1]
-                  })
-                }
-              ]
-            }
+              {
+                opacity: this.state.removeAnim,
+                transform: [
+                  {
+                    scale: this.state.removeAnim.interpolate({
+                      inputRange: [0, 1],
+                      outputRange: [12, 1]
+                    })
+                  }
+                ]
+              }
             ]
           }
         >
           <TouchableOpacity onPress={this.loginHandler}>
-            <MainHeadingtext>Thoughts</MainHeadingtext>
+            <AppHeadingText>Thoughts</AppHeadingText>
           </TouchableOpacity>
         </Animated.View>
       </MainBackground>

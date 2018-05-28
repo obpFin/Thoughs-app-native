@@ -3,6 +3,7 @@ import { Provider } from 'react-redux';
 
 import AuthScreen from './src/screens/Auth/Auth';
 import HomeScreen from './src/screens/Home/Home';
+import AddThoughtScreen from './src/screens/AddThought/AddThought';
 import configureStore from './src/store/configureStore';
 
 const store = configureStore();
@@ -15,6 +16,12 @@ Navigation.registerComponent(
 Navigation.registerComponent(
   'thoughts.HomeScreen',
   () => HomeScreen,
+  store,
+  Provider
+);
+Navigation.registerComponent(
+  'thoughts.AddThoughtScreen',
+  () => AddThoughtScreen,
   store,
   Provider
 );

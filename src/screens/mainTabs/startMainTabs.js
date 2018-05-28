@@ -3,20 +3,28 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 const startTabs = () => {
   Promise.all([
-    Icon.getImageSource('ios-home', 30)
+    Icon.getImageSource('ios-home', 30),
+    Icon.getImageSource('ios-add', 30)
   ]).then(sources => {
     Navigation.startTabBasedApp({
       tabs: [
         {
           screen: 'thoughts.HomeScreen',
-          label: 'Home',
           title: 'Home',
-          icon: sources[0]
+          icon: sources[0],
+          iconInsets: { /// change icon position (optional, iOS only).
+            bottom: -10, 
+          },
+        },
+        {
+          screen: 'thoughts.AddThoughtScreen',
+          title: 'Add Thought',
+          icon: sources[1],
+          iconInsets: { 
+            bottom: -10, 
+          },
         }
       ],
-      tabStyle: {
-        tabBarSelectedButtonColor: 'blue'
-      }
     })
   });
 };
