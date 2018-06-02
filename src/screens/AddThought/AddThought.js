@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import {
-  View,
+  ScrollView,
   ImageBackground,
   StyleSheet,
   TextInput,
-  Keyboard
+  Keyboard,
+  View,
 } from 'react-native';
 import { connect } from 'react-redux';
 
@@ -40,23 +41,25 @@ class AddThoughtScreen extends Component {
     });
     return (
       <MainBackground>
-        <View style={styles.container}>
-          <MainHeadingText style={styles.header}>Add Thought</MainHeadingText>
-          <TextAreaInput
-            style={styles.textInput}
-            value={this.state.text}
-            onChangeText={this.onChangeText}
-            multiline = {true}
-            numberOfLines = {4}
-            placeholder="What's on your mind?"
-          />
-          <SubmitButton
-            style={styles.button}
-            handleOnPress={this.handleOnPress}
-          >
-            SUBMIT
-          </SubmitButton>
-        </View>
+        <ScrollView >
+          <View style={styles.container}>
+            <MainHeadingText style={styles.header}>Add Thought</MainHeadingText>
+            <TextAreaInput
+              style={styles.textInput}
+              value={this.state.text}
+              onChangeText={this.onChangeText}
+              multiline = {true}
+              numberOfLines = {4}
+              placeholder="What's on your mind?"
+            />
+            <SubmitButton
+              style={styles.button}
+              handleOnPress={this.handleOnPress}
+            >
+              SUBMIT
+            </SubmitButton>
+            </View>
+        </ScrollView>
       </MainBackground>
     );
   }
