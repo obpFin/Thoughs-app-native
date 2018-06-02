@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import { connect } from 'react-redux';
 
+import { addThought } from '../../store/actions/index';
 import MainBackground from '../../components/UI/mainBackground/mainBackground';
 import MainText from '../../components/UI/MainText/MainText';
 import MainHeadingText from '../../components/UI/MainHeadingText/MainHeadingText';
@@ -31,8 +32,13 @@ class AddThoughtScreen extends Component {
     text = this.state.text.trim();
     if (text) {
       Keyboard.dismiss();
-      alert(text)
+      this.handleAddThought();
       this.setState({text: ''});
+    }
+  }
+  handleAddThought = () => {
+    if (this.state.text.trim() != '') {
+      this.props.onAddThought({text: this.state.text})
     }
   }
   render() {
@@ -83,10 +89,10 @@ const styles = StyleSheet.create({
   }
 });
 
-const mapStateToProps = state => {
+const mapDispatchToProps = dispatch => {
   return {
-    
+    onAddThought: (thought) => dispatch(addThought(thought))
   }
 }
 
-export default connect(mapStateToProps)(AddThoughtScreen);
+export default connect(null, mapDispatchToProps)(AddThoughtScreen);

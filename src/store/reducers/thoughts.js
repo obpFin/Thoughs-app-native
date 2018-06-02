@@ -1,6 +1,7 @@
 import { LOGIN, FETCH_THOUGHTS, ADD_THOUGHT } from '../actions/actionTypes';
 
 import uuid from 'uuid';
+import moment from 'moment';
 
 const testThoughts = [
   {
@@ -44,8 +45,10 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         thoughts: state.thoughts.concat({
+          id: uuid(),
+          creatorName: action.creatorName,
           text: action.text,
-          date: action.date
+          date: moment().toDate()
         })
       }
     };

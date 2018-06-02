@@ -1,0 +1,1 @@
+export { addThought } from './thoughts';
