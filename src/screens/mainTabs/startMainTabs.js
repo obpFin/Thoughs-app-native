@@ -19,7 +19,7 @@ const startTabs = () => {
         },
         {
           screen: 'thoughts.AddThoughtScreen',
-          title: 'Add Thought',
+          title: 'Share',
           icon: sources[1],
           iconInsets: { 
             bottom: -10, 
