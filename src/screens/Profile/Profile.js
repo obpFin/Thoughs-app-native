@@ -5,9 +5,11 @@ import {
   ImageBackground,
   StyleSheet,
 } from 'react-native';
+import { connect } from 'react-redux';
 
 import MainHeadingText from '../../components/UI/MainHeadingText/MainHeadingText';
 import MainBackground from '../../components/UI/mainBackground/mainBackground';
+import ThoughtsList from '../../components/ThoughtsList/ThoughtsList';
 
 class ProfileScreen extends Component {
   constructor(props) {
@@ -38,6 +40,12 @@ const styles = StyleSheet.create({
   header: {
     padding: 22
   },
-})
+});
 
-export default ProfileScreen;
+const mapStateToProps = state => {
+  return {
+    thoughts: state.thoughts.thoughts
+  }
+}
+
+export default connect(mapStateToProps)(ProfileScreen);
