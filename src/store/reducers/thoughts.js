@@ -8,7 +8,7 @@ const testThoughts = [
     id: uuid(),
     creatorName: 'Tami',
     text: '"Style is never out of fashion". Maikkarilla suvereeni juontaja Late Karhuvaara oli liekeissä-taas kerran; Oskari Saaren haastattelu alkavasta formulakaudesta oli nappisuoritus!! Illaksi kotiin legendaariseen "Finnair slogan" tyyliin!! "Det blir spännande" sanoisi ruotsin "Aurinkokuningas", ystäväni Niklas Wikegård!! Kevyeltä tuntui; kondis nousee- SIMPLY GREAT!!!',
-    date: new Date('July 17, 2018 03:24:00')
+    date: new Date('Feb 17, 2018 03:24:00')
   },
   {
     id: uuid(),
@@ -20,13 +20,13 @@ const testThoughts = [
     id: uuid(),
     creatorName: 'Tami',
     text: 'nyt katse eteenpäin =game 2; 15.30 kevyt harjoitus + pelin purku-Aittolan videotykki + Aurinkokuninkaan verbaliikka= kova combination!! Nyt kylpylään, huippudinner mme:n kanssa ja early to bed, koska aamulla vielä 9 reikää peliä, kamojen pakkaus ja sitten home, sweet home!!',
-    date: new Date('Aug 30, 2018 21:04:00')
+    date: new Date('Aug 30, 2017 21:04:00')
   },
   {
     id: uuid(),
     creatorName: 'Tami',
     text: 'Keep up the good work!!Tässä hengessä kaikille taistelijoille ja upeille daameille have a great week; kitisijät lukekaa lehdet tarkkaan, Pohjois-Korean liiderit jo on uho päällä, joten pikkuhiljaa KITISIJÖILLEKIN kirkastuu: "There is no paradise"; joten koettakaa kestää ja jos pinna on lujilla-menkää lähimetsään ja huutakaa 30 min suoraa huutoa-se helpottaa-luulisin!!',
-    date: new Date('Dec 22, 2018 14:34:00')
+    date: new Date('Dec 22, 2017 14:34:00')
   },
 ]
 

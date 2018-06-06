@@ -12,7 +12,7 @@ const ThoughtsList = (props) => (
   <View style={styles.container}>
     <FlatList
       style={styles.list}
-      data={props.thoughts}
+      data={props.thoughts.sort((a,b) => b.date - a.date)}
       renderItem={(info) => (
         <Thought
           key={info.id}

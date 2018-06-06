@@ -12,7 +12,7 @@ const ProfileThoughtsList = (props) => (
   <View style={styles.container}>
     <FlatList
       style={styles.list}
-      data={props.thoughts.sort((a,b) => a.date - b.date)}
+      data={props.thoughts.sort((a,b) => b.date - a.date)}
       renderItem={( info ) => (
         <Thought
           key={info.id}
