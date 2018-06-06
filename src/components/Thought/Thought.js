@@ -13,7 +13,7 @@ class Thought extends Component {
     console.log(this.props)
     return (
       <View style={styles.container}>
-        <MainText style={styles.creatorName}>{this.props.creatorName}</MainText>
+        { this.props.creatorName && <MainText style={styles.creatorName}>{this.props.creatorName}</MainText> }
         <MainText>{this.props.text}</MainText>
       </View>
     );
