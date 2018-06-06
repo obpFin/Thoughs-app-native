@@ -13,11 +13,10 @@ const ThoughtsList = (props) => (
     <FlatList
       style={styles.list}
       data={props.thoughts}
-      renderItem={( info ) => (
+      renderItem={(info) => (
         <Thought
-          key={info.item.id}
-          text={info.item.text}
-          creatorName={info.item.creatorName}
+          key={info.id}
+          {...info.item}
         />
       )}
       keyExtractor={(item,index) => item.id}

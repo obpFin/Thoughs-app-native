@@ -10,7 +10,8 @@ class Thought extends Component {
     super(props);
   }
   render() {
-    console.log(this.props)
+    console.log('Thought',this.props)
+    console.log('Name',this.props.creatorName)
     return (
       <View style={styles.container}>
         { this.props.creatorName && <MainText style={styles.creatorName}>{this.props.creatorName}</MainText> }
