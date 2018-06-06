@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
 
 import MainHeadingText from '../../components/UI/MainHeadingText/MainHeadingText';
 import MainBackground from '../../components/UI/mainBackground/mainBackground';
-import ThoughtsList from '../../components/ThoughtsList/ThoughtsList';
+import ProfileThoughtsList from '../../components/ProfileThoughtsList/ProfileThoughtsList';
 
 class ProfileScreen extends Component {
   constructor(props) {
@@ -26,6 +26,9 @@ class ProfileScreen extends Component {
           <MainHeadingText style={styles.header}>
             Your Thoughts
           </MainHeadingText>
+          <ProfileThoughtsList
+            thoughts={this.props.thoughts}
+          />
         </View>
       </MainBackground>
     );
