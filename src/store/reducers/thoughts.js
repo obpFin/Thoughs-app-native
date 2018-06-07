@@ -39,6 +39,7 @@ const initialState = {
 }
 
 const reducer = (state = initialState, action) => {
+  console.log('reducer', action)
   switch (action.type) {
     case FETCH_THOUGHTS: {
       return {
@@ -52,6 +53,7 @@ const reducer = (state = initialState, action) => {
           id: uuid(),
           creatorName: action.creatorName,
           text: action.text,
+          type: action.thoughtType,
           date: moment().toDate()
         })
       }

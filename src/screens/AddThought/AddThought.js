@@ -6,6 +6,7 @@ import {
   TextInput,
   Keyboard,
   View,
+  PickerIOS
 } from 'react-native';
 import { connect } from 'react-redux';
 
@@ -21,12 +22,11 @@ class AddThoughtScreen extends Component {
     super(props);
   }
   state = {
-    text: ''
+    text: '',
+    type: ''
   }
   onChangeText = (text) => {
-    this.setState({
-      text
-    });
+    this.setState({text});
   }
   handleOnPress = (e) => {
     text = this.state.text.trim();
@@ -38,7 +38,10 @@ class AddThoughtScreen extends Component {
   }
   handleAddThought = () => {
     if (this.state.text.trim() != '') {
-      this.props.onAddThought({text: this.state.text})
+      this.props.onAddThought({
+        text: this.state.text,
+        type: this.state.type
+      });
     }
   }
   render() {
@@ -50,6 +53,17 @@ class AddThoughtScreen extends Component {
         <ScrollView >
           <View style={styles.container}>
             <MainHeadingText style={styles.header}>Add Thought</MainHeadingText>
+            <PickerIOS
+              selectedValue={this.state.type}
+              style={styles.picker}
+              itemStyle={{color: 'white'}}
+              onValueChange={(itemValue, itemIndex) => this.setState({type: itemValue})}
+            >
+              <PickerIOS.Item label="Happy" value="happy" />
+              <PickerIOS.Item label="Excited" value="excited" />
+              <PickerIOS.Item label="Sad" value="sad" />
+              <PickerIOS.Item label="Shocked" value="shocked" />
+            </PickerIOS>
             <TextAreaInput
               style={styles.textInput}
               value={this.state.text}
@@ -79,6 +93,10 @@ const styles = StyleSheet.create({
   },
   header: {
     padding: 22
+  },
+  picker: {
+    width: 200,
+    height: 200
   },
   textInput: {
     width: '80%',
