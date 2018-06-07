@@ -1,23 +1,24 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
   View,
-  StyleSheet
+  StyleSheet,
 } from 'react-native';
+import ThoughtType from './ThoughtType';
 import MainText from '../UI/MainText/MainText';
+import moment from 'moment';
 
-class Thought extends Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    return (
-      <View style={styles.container}>
-        { this.props.creatorName && <MainText style={styles.creatorName}>{this.props.creatorName}</MainText> }
-        <MainText>{this.props.text}</MainText>
-      </View>
-    );
-  }
-}
+const Thought = props => (
+  <View style={styles.container}>
+    <View style={styles.thoughtHeader}>
+      <MainText style={styles.creatorName}>
+        {props.creatorName}
+        <ThoughtType type={props.type} style={styles.smiley}/>
+      </MainText>
+      <MainText style={styles.date}>{moment(props.date).format('DD/MM/YYYY')}</MainText>
+    </View>
+    <MainText>{props.text}</MainText>
+  </View>
+);
 
 const styles = StyleSheet.create({
   container: {
@@ -30,10 +31,25 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'white'
   },
+  thoughtHeader: {
+    flexDirection: 'row',
+    width: '100%',
+    justifyContent: 'space-between',
+    alignItems: 'center'
+  },
   creatorName: {
     fontSize: 18,
     fontWeight: 'bold',
-    paddingBottom: 10
+    paddingBottom: 10,
+  },
+  smiley: {
+    marginLeft: 10
+  },
+  date: {
+    fontSize: 14,
+    paddingBottom: 13,
+    color: 'grey',
+    alignSelf: 'flex-end',
   }
 });
 

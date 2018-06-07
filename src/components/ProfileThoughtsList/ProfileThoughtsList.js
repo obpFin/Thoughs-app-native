@@ -15,8 +15,9 @@ const ProfileThoughtsList = (props) => (
       data={props.thoughts.sort((a,b) => b.date - a.date)}
       renderItem={( info ) => (
         <Thought
-          key={info.id}
-          text={info.item.text}
+        key={info.id}
+        type={info.item.type}
+        text={info.item.text}
         />
       )}
       keyExtractor={(item,index) => item.id}

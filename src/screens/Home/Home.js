@@ -15,6 +15,7 @@ class HomeScreen extends Component {
     super(props);
   }
   render() {
+    console.log(this.props.thoughts)
     this.props.navigator.setStyle({
       navBarTextFontFamily: 'KaushanScript-Regular',
     });
