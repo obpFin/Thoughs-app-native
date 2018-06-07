@@ -1,4 +1,6 @@
 import { createStore, combineReducers, compose } from 'redux';
+import devToolsEnhancer from 'remote-redux-devtools';
+
 import thoughtsReducer from './reducers/thoughts';
 
 const rootReducer = combineReducers({
@@ -6,7 +8,9 @@ const rootReducer = combineReducers({
 });
 
 const configureStore = () => {
-  return createStore(rootReducer);
+  return createStore(
+    rootReducer, devToolsEnhancer()
+  );
 }
 
 export default configureStore;
