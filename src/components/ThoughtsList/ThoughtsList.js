@@ -5,7 +5,6 @@ import {
   FlatList,
   Text
 } from 'react-native';
-import MainText from '../UI/MainText/MainText';
 import Thought from '../Thought/Thought';
 
 const ThoughtsList = (props) => (

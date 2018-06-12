@@ -2,10 +2,12 @@ import React from 'react';
 import {
   View,
   StyleSheet,
+  TouchableOpacity
 } from 'react-native';
 import ThoughtType from './ThoughtType';
 import MainText from '../UI/MainText/MainText';
 import moment from 'moment';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const Thought = props => (
   <View style={styles.container}>
@@ -17,6 +19,14 @@ const Thought = props => (
       <MainText style={styles.date}>{moment(props.date).format('DD/MM/YYYY')}</MainText>
     </View>
     <MainText>{props.text}</MainText>
+    {props.editAllowed ? 
+      <TouchableOpacity>
+        <Icon style={styles.edit} name="ios-create" size={25} color="#007AFF"/>
+      </TouchableOpacity>
+      :
+      null
+    }
+
   </View>
 );
 
@@ -50,6 +60,10 @@ const styles = StyleSheet.create({
     paddingBottom: 13,
     color: 'grey',
     alignSelf: 'flex-end',
+  },
+  edit: {
+    paddingTop: 10,
+    paddingLeft: 10
   }
 });
 

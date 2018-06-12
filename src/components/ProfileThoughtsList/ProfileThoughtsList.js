@@ -18,6 +18,7 @@ const ProfileThoughtsList = (props) => (
         key={info.id}
         type={info.item.type}
         text={info.item.text}
+        editAllowed={true}
         />
       )}
       keyExtractor={(item,index) => item.id}

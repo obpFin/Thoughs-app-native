@@ -43,7 +43,7 @@ class AddThoughtScreen extends Component {
         type: this.state.type
       });
       this.props.navigator.switchToTab({
-        tabIndex: 0 // (optional) if missing, this screen's tab will become selected
+        tabIndex: 0
       });
     }
   }
