@@ -9,10 +9,12 @@ const MainHeadingText = props => (
 
 const styles = StyleSheet.create({
   textHeading: {
-    //fontFamily: 'KaushanScript-Regular',
     fontSize: 24,
     color: 'white',
-    fontFamily: 'Gill Sans'
+    fontFamily: 'GeezaPro-Bold',
+    shadowOffset:{  width: 3,  height: 3,  },
+    shadowColor: 'black',
+    shadowOpacity: 1.0,
   }
 });
 
