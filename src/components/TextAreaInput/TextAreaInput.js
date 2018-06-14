@@ -6,6 +6,7 @@ const TextAreaInput = (props) => (
     {...props}
     style={[styles.textInput, props.style]}
     onChangeText={props.onChangeText}
+    autoCorrect={false}
   />
 );
 

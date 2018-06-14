@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-end',
   },
   edit: {
-    paddingTop: 10,
+    paddingTop: 30,
     paddingLeft: 10
   }
 });
