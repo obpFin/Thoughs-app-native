@@ -7,3 +7,5 @@ Thoughts-app native ios app
 - Redux
 
 - React Native Navigation
+
+![](http://i63.tinypic.com/2sbvoma.png)
