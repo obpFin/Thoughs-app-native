@@ -1,6 +1,6 @@
-# Thoughs-app-native
+# Thoughts-app-native
 
-Thoughts-app native ios app
+Mobile client for Thoughts-app project
 
 - React Native
 
